@@ -5,4 +5,9 @@ FROM registry.access.redhat.com/ubi9/openjdk-17
 ADD https://github.com/cziesman/spring-boot-reactjs-app-1/raw/refs/heads/main/backend/target/weather-0.0.1-SNAPSHOT.jar main.jar
 
 EXPOSE 7890
-CMD ["java", "-Dserver.port=7890", "-jar", "main.jar"]
+
+WORKDIR /app
+
+COPY target/main.jar /app/main.jar
+
+CMD ["java", "-jar", "-Dserver.port=7890", "/app/main.jar"]
