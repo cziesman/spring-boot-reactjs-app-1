@@ -8,4 +8,4 @@ ADD https://github.com/cziesman/spring-boot-reactjs-app-1/raw/refs/heads/main/ba
 
 EXPOSE 7890
 
-CMD ["java", "-jar", "-Dserver.port=7890", "/app/main.jar"]
+CMD ["java", "-Dserver.port=7890", "-jar", "/app/main.jar"]
